@@ -1,0 +1,64 @@
+@import '../styles/variables.css';
+
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.characterCard {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-card);
+}
+
+.imageContainer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info {
+    padding: var(--spacing-base);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.name {
+    margin: 0 0 var(--spacing-sm) 0;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    color: var(--color-text-dark);
+}
+
+.status {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-medium);
+}
+
+.alive {
+    color: var(--color-success);
+}
+
+.dead {
+    color: var(--color-error);
+}
+
+.unknown {
+    color: var(--color-warning);
+}

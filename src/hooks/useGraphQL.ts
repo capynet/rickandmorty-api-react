@@ -1,0 +1,34 @@
+import {useQuery} from "urql";
+import {GET_CHARACTERS, GET_CHARACTER} from "../graphql/queries";
+import {CharacterResponse, CharactersResponse} from "../types/responses";
+
+export function useCharacters(page: number) {
+    const [result] = useQuery<CharactersResponse>({
+        query: GET_CHARACTERS,
+        variables: {page},
+    });
+
+    const {data, fetching, error} = result;
+
+    return {
+        characters: data?.characters?.results || [],
+        info: data?.characters?.info,
+        loading: fetching,
+        error
+    };
+}
+
+export function useCharacter(id: string) {
+    const [result] = useQuery<CharacterResponse>({
+        query: GET_CHARACTER,
+        variables: {id},
+    });
+
+    const {data, fetching, error} = result;
+
+    return {
+        character: data?.character,
+        loading: fetching,
+        error
+    };
+}
