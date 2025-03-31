@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import { client } from "./services/graphql";
 import "./styles/global.css";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const CharacterPage = lazy(() => import("./pages/CharacterPage/CharacterPage"));
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
                 <CharacterPage />
             </Suspense>
         ),
+    },
+    {
+        path: "*",
+        element: <NotFoundPage />,
     },
 ]);
 

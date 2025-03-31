@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {useSearchParams} from "react-router-dom";
+import {useSearchParams, useNavigate} from "react-router-dom";
 import Character from "../components/CharacterCard";
 import Pagination from "../components/Pagination";
 import {useCharacters} from "../hooks/useGraphQL";
@@ -7,11 +7,25 @@ import styles from "./HomePage.module.css";
 
 const HomePage = () => {
     const [searchParams, setSearchParams] = useSearchParams();
+    const navigate = useNavigate();
     const initialPage = parseInt(searchParams.get("page") || "1");
-    const [page, setPage] = useState(initialPage);
+    const [page, setPage] = useState(initialPage < 1 ? 1 : initialPage);
     const {characters, info, loading, error} = useCharacters(page);
 
-    // Update URL when page changes
+    useEffect(() => {
+        if (!loading && info) {
+            if (page < 1) {
+                setPage(1);
+                setSearchParams({});
+                return;
+            }
+
+            if (page > info.pages) {
+                navigate("/not-found", { replace: true });
+            }
+        }
+    }, [info, loading, page, navigate, setSearchParams]);
+
     useEffect(() => {
         if (page > 1) {
             setSearchParams({page: page.toString()});
@@ -34,6 +48,12 @@ const HomePage = () => {
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Rick and Morty Characters</h1>
+
+            {info && (
+                <div className={styles.pageInfo}>
+                    Page {page} of {info.pages}
+                </div>
+            )}
 
             <div className={styles.charactersGrid}>
                 {characters.map(character =>
