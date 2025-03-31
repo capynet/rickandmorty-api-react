@@ -1,5 +1,5 @@
 import styles from "./CharacterInfo.module.css";
-import {CharacterQuery} from "../../../../generated/graphql";
+import {CharacterQuery} from "~/src/generated/graphql";
 
 type CharacterInfoProps = {
     character: NonNullable<CharacterQuery['character']>;

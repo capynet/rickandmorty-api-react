@@ -1,5 +1,5 @@
 import {useQuery} from "urql";
-import {GET_CHARACTERS, GET_CHARACTER} from "../graphql/queries";
+import {GET_CHARACTERS, GET_CHARACTER} from "~/src/graphql/queries";
 import {CharacterQuery, CharacterQueryVariables, GetCharactersQuery, GetCharactersQueryVariables} from "../generated/graphql";
 
 export function useCharacters(page: number) {

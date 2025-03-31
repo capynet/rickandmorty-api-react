@@ -1,6 +1,6 @@
 import {Link, useSearchParams} from 'react-router-dom';
 import styles from './CharacterCard.module.css';
-import {GetCharactersQuery} from "../generated/graphql";
+import {GetCharactersQuery} from "~/src/generated/graphql";
 
 type CharacterType = NonNullable<GetCharactersQuery['characters']['results'][number]>;
 

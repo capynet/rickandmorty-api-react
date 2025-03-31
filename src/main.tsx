@@ -2,10 +2,10 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "urql";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import { client } from "./services/graphql";
-import "./styles/global.css";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import HomePage from "~/src/pages/HomePage";
+import { client } from "~/src/services/graphql";
+import "~/src/styles/global.css";
+import NotFoundPage from "~/src/pages/NotFoundPage/NotFoundPage";
 
 const CharacterPage = lazy(() => import("./pages/CharacterPage/CharacterPage"));
 

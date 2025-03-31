@@ -1,8 +1,8 @@
 import {useState, useMemo, useCallback} from 'react';
 import {useParams, Link, useSearchParams} from 'react-router-dom';
 import styles from './CharacterPage.module.css';
-import {useCharacter} from "../../hooks/useGraphQL";
-import Pagination from "../../components/Pagination";
+import {useCharacter} from "~/src/hooks/useGraphQL";
+import Pagination from "~/src/components/Pagination/Pagination";
 import CharacterInfo from "./components/CharacterInfo/CharacterInfo";
 import EpisodeCard from "./components/EpisodeCard/EpisodeCard";
 

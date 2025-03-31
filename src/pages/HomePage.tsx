@@ -1,8 +1,8 @@
 import {useState, useEffect} from "react";
 import {useSearchParams, useNavigate} from "react-router-dom";
-import Character from "../components/CharacterCard";
-import Pagination from "../components/Pagination";
-import {useCharacters} from "../hooks/useGraphQL";
+import Character from "~/src/components/CharacterCard/CharacterCard";
+import Pagination from "../components/Pagination/Pagination";
+import {useCharacters} from "~/src/hooks/useGraphQL";
 import styles from "./HomePage.module.css";
 
 const HomePage = () => {

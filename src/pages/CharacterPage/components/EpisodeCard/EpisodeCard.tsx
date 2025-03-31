@@ -1,5 +1,5 @@
 import styles from "./EpisodeCard.module.css";
-import {CharacterQuery} from "../../../../generated/graphql";
+import {CharacterQuery} from "~/src/generated/graphql";
 
 type EpisodeCardProps = {
     episode: NonNullable<NonNullable<CharacterQuery['character']>['episode']>[number];
