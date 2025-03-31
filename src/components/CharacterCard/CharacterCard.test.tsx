@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import CharacterCard from './CharacterCard';
-import { characterMock } from '../test/mocks/mockData';
+import { characterMock } from '~/src/test/mocks/mockData';
 
 describe('CharacterCard Component', () => {
     it('renders character information correctly', () => {
