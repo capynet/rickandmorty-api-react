@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 import { client } from "./services/graphql";
 import "./styles/global.css";
 
-const CharacterPage = lazy(() => import("./pages/CharacterPage"));
+const CharacterPage = lazy(() => import("./pages/CharacterPage/CharacterPage"));
 
 const router = createBrowserRouter([
     {

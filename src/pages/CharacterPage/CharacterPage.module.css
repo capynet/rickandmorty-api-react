@@ -1,0 +1,100 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.backButton {
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 8px 16px;
+    background-color: #3c3e44;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.backButton:hover {
+    background-color: #1d1f21;
+}
+
+.episodesSection {
+    margin-top: 40px;
+}
+
+.episodesTitle {
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.episodesList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+}
+
+@media (min-width: 640px) {
+    .episodesList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .episodesList {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.loading, .error, .notFound {
+    text-align: center;
+    margin: 80px 0;
+    font-size: 18px;
+}
+
+.error {
+    color: #e74c3c;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.pageButton {
+    padding: 8px 15px;
+    background-color: #3c3e44;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.pageButton:hover {
+    background-color: #1d1f21;
+}
+
+.pageButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.pageInfo {
+    font-weight: 500;
+    font-size: 14px;
+    color: #666;
+}
+
+@media (min-width: 768px) {
+    .pageInfo {
+        font-size: 16px;
+    }
+}
