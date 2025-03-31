@@ -1,3 +1,5 @@
+import { CharacterQuery, GetCharactersQuery } from "../../generated/graphql";
+
 export const characterMock = {
     id: '1',
     name: 'Rick Sanchez',
@@ -5,7 +7,10 @@ export const characterMock = {
     species: 'Human',
     type: '',
     gender: 'Male',
-    origin: { name: 'Earth (C-137)' },
+    origin: {
+        name: 'Earth (C-137)',
+        id: null,
+    },
     image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     episode: [
         {
@@ -21,9 +26,9 @@ export const characterMock = {
             episode: 'S01E02',
         },
     ],
-};
+} as CharacterQuery['character'];
 
-export const charactersMock = {
+export const charactersMock: GetCharactersQuery['characters'] = {
     info: {
         count: 2,
         pages: 1,
@@ -31,7 +36,7 @@ export const charactersMock = {
         prev: null,
     },
     results: [
-        characterMock,
+        characterMock as any,
         {
             id: '2',
             name: 'Morty Smith',
@@ -39,7 +44,10 @@ export const charactersMock = {
             species: 'Human',
             type: '',
             gender: 'Male',
-            origin: { name: 'Earth (C-137)' },
+            origin: {
+                name: 'Earth (C-137)',
+                id: null,
+            },
             image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
             episode: [
                 {
@@ -49,6 +57,6 @@ export const charactersMock = {
                     episode: 'S01E01',
                 },
             ],
-        },
+        } as any,
     ],
 };

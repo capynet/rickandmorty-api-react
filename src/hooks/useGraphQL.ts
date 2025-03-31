@@ -1,9 +1,9 @@
 import {useQuery} from "urql";
 import {GET_CHARACTERS, GET_CHARACTER} from "../graphql/queries";
-import {CharacterResponse, CharactersResponse} from "../types/responses";
+import {CharacterQuery, CharacterQueryVariables, GetCharactersQuery, GetCharactersQueryVariables} from "../generated/graphql";
 
 export function useCharacters(page: number) {
-    const [result] = useQuery<CharactersResponse>({
+    const [result] = useQuery<GetCharactersQuery, GetCharactersQueryVariables>({
         query: GET_CHARACTERS,
         variables: {page},
     });
@@ -19,7 +19,7 @@ export function useCharacters(page: number) {
 }
 
 export function useCharacter(id: string) {
-    const [result] = useQuery<CharacterResponse>({
+    const [result] = useQuery<CharacterQuery, CharacterQueryVariables>({
         query: GET_CHARACTER,
         variables: {id},
     });

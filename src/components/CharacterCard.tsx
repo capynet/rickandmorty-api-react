@@ -1,9 +1,11 @@
 import {Link, useSearchParams} from 'react-router-dom';
 import styles from './CharacterCard.module.css';
-import {type Character as CharacterSchema} from "../types/character";
+import {GetCharactersQuery} from "../generated/graphql";
+
+type CharacterType = NonNullable<GetCharactersQuery['characters']['results'][number]>;
 
 interface Props {
-    character: CharacterSchema;
+    character: CharacterType;
 }
 
 export default function Character({character}: Props) {
